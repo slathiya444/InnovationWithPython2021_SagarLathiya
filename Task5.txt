@@ -42,7 +42,7 @@ ask for a Re-Type Password and if the password is incorrect give chance to enter
 should not be more than 3 times.
 
 cred = {"user1":"88312318","user2":"123456789"}
-counter = 0
+#counter = 0
 
 print(cred.keys()) # This is to know what are the users in our dictionary
 counter = 0
