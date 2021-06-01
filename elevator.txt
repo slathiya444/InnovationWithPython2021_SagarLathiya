@@ -1,0 +1,84 @@
+class Elevator(object):
+
+    def __init__(self, num_floors, starting_floor):
+        self.num_floors = num_floors
+        self.current_floor = starting_floor
+        self.requested_floors = set()
+        self.visited_floors = []
+        self.num_floors_traveled = 0
+
+    # The requests for the floor by the user
+    def request_floor(self, floor):
+        self.requested_floors.add(floor)
+
+    # counts the floor differance to determine which floor is the next to stop at.
+    def get_floor_difference(self, floor):
+        return abs(self.current_floor - floor)
+
+    # The floor at which elevator stops for picking up or living the customer.
+    def visit_floor(self, floor):
+        self.num_floors_traveled += self.get_floor_difference(floor)
+        # Now the current floor will be the floor at which elevator stops.
+        self.current_floor = floor
+        self.visited_floors.append(self.current_floor)
+        # discard() will remove the floor number from requested floor list
+        self.requested_floors.discard(self.current_floor)
+
+    def travel(self):
+        while len(self.requested_floors) != 0:
+            closest_floor = min(
+                self.requested_floors, key=self.get_floor_difference)
+            self.visit_floor(closest_floor)
+
+def test(elevator):
+
+    # Output initial parameters and state of elevator
+    print('Number of floors: {}'.format(elevator.num_floors))
+    print('Starting at floor {}'.format(elevator.current_floor))
+    print('Requested floors: {}'.format(
+        ', '.join(map(str, elevator.requested_floors))))
+    elevator.travel()
+    # Output statistics pertaining to elevator's completed journey
+    print('Visited floors: {}'.format(
+        ', '.join(map(str, elevator.visited_floors))))
+    print('Number of floors traveled: {}'.format(elevator.num_floors_traveled))
+    # Output blank line to improve readability
+    print()
+
+#
+# elevator = Elevator(num_floors=5, starting_floor=1)
+# elevator.request_floor(5)
+# test(elevator)
+#
+# elevator = Elevator(num_floors=7, starting_floor=1)
+# elevator.request_floor(5)
+# elevator.request_floor(3)
+# elevator.request_floor(7)
+# test(elevator)
+#
+# elevator = Elevator(num_floors=14, starting_floor=5)
+# elevator.request_floor(4)
+# elevator.request_floor(1)
+# elevator.request_floor(12)
+# elevator.request_floor(9)
+# elevator.request_floor(3)
+# test(elevator)
+# # this will go from 5 to 4 (downwards) because from floor 5, closest floor is 4.
+
+
+elevator = Elevator(num_floors=5, starting_floor=3)
+elevator.request_floor(1)
+elevator.request_floor(2)
+elevator.request_floor(4)
+elevator.request_floor(5)
+test(elevator)
+# here the differance from starting floor (3) to floor 4 and floor 2 are same.
+# but as we used min() in travel function, it will go to floor 2 first.
+
+
+
+notes :
+For this program, I took the algorithm from google and implemented it.
+I also used google so many times at each point while working on this program.
+I also used some function code directly from the google, but mainly I built the logic.
+But still I would say help is taken and appreciated.
