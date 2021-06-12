@@ -1,0 +1,43 @@
+body {
+    background-image:  url("/static/images/paper.jpg");
+    background-repeat:repeat
+}
+table {
+  table-layout: fixed;
+  height : 200px;
+  width: 400px;
+  border: 1px solid black;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: 40px
+}
+
+td{
+  text-align: center;
+  text-indent: 5px;
+  text-align: justify;
+  text-justify: inter-word;
+  font-size: 18px
+}
+
+
+legend{
+  font-size : 30px;
+  padding : 4px;
+
+}
+
+.main{
+    margin: 200px;
+    border: 1px solid red;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.button{
+  text-align: center;
+}
+
+
+
+

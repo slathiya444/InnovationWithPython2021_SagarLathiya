@@ -1,0 +1,114 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/decor.css' %}">
+    </head>
+
+<!--    <div id="bg">-->
+<!--        <img src="{% static 'images/img1.jpg' %}" >-->
+<!--    </div>-->
+    <body>
+    <div class="main">
+        <form method="POST" >
+            {% csrf_token %}
+            <div class="table>">
+                 <legend>Kindly Give your Contribution.</legend>
+                <table>
+                    <tr>
+                    <td>First Name:</td>
+                    <td>{{ form.first_name }}</td>
+                    </tr>
+                    <tr>
+                    <td>Last Name:</td>
+                    <td>{{ form.last_name }}</td>
+                    </tr>
+                    <tr>
+                    <td>ID:</td>
+                    <td>{{ form.ids }}</td>
+                    </tr>
+                    <tr>
+                    <td>Contact:</td>
+                    <td>{{ form.contact }}</td>
+                    </tr>
+                </table>
+            </div>
+
+            <br>
+            <div class="button">
+                <input id="button" type="submit" name="submit" value="submit" >
+            </div>
+
+        </form>
+    </div>
+
+
+
+    </body>
+</html>
+<!--<head>-->
+<!--    <link rel="stylesheet" href="{% static 'css/decor.css' %}">-->
+<!--</head>-->
+
+<!--&lt;!&ndash;<div id="bg">&ndash;&gt;-->
+<!--&lt;!&ndash;    <img src="{% static 'images/img1.jpg' %}" >&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--<body>-->
+<!--    <form method="POST" >-->
+<!--        {% csrf_token %}-->
+<!--        <div class="table>"-->
+<!--             <legend>Kindly Give your Contribution.</legend>-->
+<!--            <table>-->
+<!--                <tr>-->
+<!--                <td>First Name:</td>-->
+<!--                <td>{{ form.first_name }}</td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                <td>Last Name:</td>-->
+<!--                <td>{{ form.last_name }}</td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                <td>ID:</td>-->
+<!--                <td>{{ form.ids }}</td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                <td>Contact:</td>-->
+<!--                <td>{{ form.contact }}</td>-->
+<!--                </tr>-->
+<!--            </table>-->
+<!--        </div>-->
+
+<!--        <br>-->
+<!--        <input type="submit" name="submit" value="submit">-->
+<!--    </form>-->
+
+
+<!--</body>-->
+<!--<form method="POST" >-->
+<!--    {% csrf_token %}-->
+<!--    <div class="table>"-->
+<!--         <legend>Kindly Give your Contribution.</legend>-->
+<!--        <table>-->
+<!--            <tr>-->
+<!--            <td>First Name:</td>-->
+<!--            <td>{{ form.first_name }}</td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--            <td>Last Name:</td>-->
+<!--            <td>{{ form.last_name }}</td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--            <td>ID:</td>-->
+<!--            <td>{{ form.ids }}</td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--            <td>Contact:</td>-->
+<!--            <td>{{ form.contact }}</td>-->
+<!--            </tr>-->
+<!--        </table>-->
+<!--    </div>-->
+
+<!--    <br>-->
+<!--    <input type="submit" name="submit" value="submit">-->
+<!--</form>-->
+
+
