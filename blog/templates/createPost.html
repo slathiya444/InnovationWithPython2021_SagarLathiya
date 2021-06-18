@@ -1,0 +1,41 @@
+{% extends "base.html"%}
+{% load crispy_forms_tags %}
+{% block content %}
+<!--    {% for post in posts %}-->
+<!--        <article class="media content-section">-->
+<!--          <div class="media-body">-->
+<!--            <div class="article-metadata">-->
+<!--              <a class="mr-2" href="#">{{ post.author }}</a>-->
+<!--              <small class="text-muted">{{ post.date_posted }}</small>-->
+<!--            </div>-->
+<!--            <h2><a class="article-title" href="#">{{ post.title }}</a></h2>-->
+<!--            <p class="article-content">{{ post.content }}</p>-->
+<!--          </div>-->
+<!--        </article>-->
+<!--    {% endfor %}-->
+
+<!--<form method="POST">-->
+<!--  {% csrf_token %}-->
+<!--  {{form|crispy}}-->
+<!--  <input type="submit" name="submit">-->
+
+<!--</form>-->
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Create a Post</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Submit</button>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+<!--            <small class="text-muted">-->
+<!--                Already Have An Account? <a class="ml-2" href="#">Sign In</a>-->
+<!--            </small>-->
+        </div>
+    </div>
+
+{% endblock content %}
